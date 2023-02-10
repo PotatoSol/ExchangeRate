@@ -9,9 +9,5 @@ export class Currency{
   calculateConversion(){
 
   }
-
-  checkValidCurrency(){
-
-  }
 }
 
