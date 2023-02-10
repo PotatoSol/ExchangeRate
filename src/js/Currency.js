@@ -7,7 +7,7 @@ export class Currency{
   }
 
   calculateConversion(){
-
+    
   }
 }
 
