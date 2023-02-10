@@ -1,6 +1,6 @@
 import {Currency} from "./js/currency.js";
 
-function handleSubmission(){  
+function handleSubmission(){ 
   Currency.calculateConversion(
     document.getElementById("amountInput").value,
     document.getElementById("nativeInput").value,
@@ -10,7 +10,11 @@ function handleSubmission(){
   }).catch(function(error){
     let errorResult = error;
     if(errorResult[0].status == 404){
-      document.getElementById("output").innerText = "404: One of the currencies not found, check your inputs!";
+      Currency.checkInput(document.getElementById("nativeInput").value).then(function(){
+        document.getElementById("output").innerText = `404: ${document.getElementById("targetInput").value} is not a valid currency.`;
+      }).catch(function(){
+        document.getElementById("output").innerText = `404: ${document.getElementById("nativeInput").value} is not a valid currency.`;
+      });
     } else {
       console.log(error);
     }

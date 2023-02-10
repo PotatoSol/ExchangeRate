@@ -20,5 +20,23 @@ export class Currency{
     });
     return promise;
   }
+
+  static checkInput(input){
+    let promise = new Promise(function(resolve, reject){
+      let request = new XMLHttpRequest();
+      const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/usd/${input}/100`;
+      request.addEventListener("loadend", function() {
+        const response = JSON.parse(this.responseText);
+        if(this.status === 200){
+          resolve([response, true]);
+        } else {
+          reject([this, false]);
+        }
+      });
+      request.open("GET", url, true);
+      request.send();
+    });
+    return promise;
+  }
 }
 
