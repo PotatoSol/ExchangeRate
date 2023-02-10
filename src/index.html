@@ -4,11 +4,11 @@
   <title>Exchange Rate Calculator</title>
 </head>
 <body>
-  <form>
+  <form id="userInput">
     <label for="amount">Convert: </label>
-    <input type="number" id="amount" min="0"></input>
+    <input type="number" id="amountInput" min="0"></input>
     <label for="native"></label>
-    <select id="naitve" name="native">
+    <select id="naitveInput" name="native">
       <option value="usd">USD</option>
       <option value="krw">KRW</option>
       <option value="mxn">MXN</option>
@@ -17,14 +17,15 @@
       <option value="err">Error</option>
     </select> Into:
     <label for="target"><label>
-      <select id="naitve" name="native">
-        <option value="usd">USD</option>
-        <option value="krw">KRW</option>
-        <option value="mxn">MXN</option>
-        <option value="eur">EUR</option>
-        <option value="cad">CAD</option>
-        <option value="err">Error</option>
-      </select>
+    <select id="targetInput" name="target">
+      <option value="usd">USD</option>
+      <option value="krw">KRW</option>
+      <option value="mxn">MXN</option>
+      <option value="eur">EUR</option>
+      <option value="cad">CAD</option>
+      <option value="err">Error</option>
+    </select>
+    <button type="userInputButton" id="inputButton">Calculate</button>
   </form>
 </body>
 </html>
