@@ -7,9 +7,16 @@ export class Currency{
   }
 
   calculateConversion(){
-    fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
+    fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${this.native}/eur/${this.amount}`)
       .then(function(response){
-        console.log(response);
+        console.log(response.url[0]);
+        if(response.status !== 200){
+          //did not receive a 200 response
+        }else if(response[1] === "unsupported-code"){
+          console.log("invalid");
+        } else {
+          console.log(response.conversion_result);
+        }
       });
   }
 }

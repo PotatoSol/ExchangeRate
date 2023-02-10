@@ -6,7 +6,7 @@
 //error check - on page
 //  * for invalid currency
 //  * for non-200 api response
-import {Currency} from "./js/currency.js"
+import {Currency} from "./js/currency.js";
 
 function handleSubmission(){
   let userInput = new Currency(
