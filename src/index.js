@@ -15,7 +15,7 @@ function handleSubmission(){
     document.getElementById("targetInput").value
   ).then(function(response){
     //console.log(response[0].conversion_result);
-    document.getElementById("output").innerText = response[0].conversion_result;
+    document.getElementById("output").innerText = (Intl.NumberFormat().format(response[0].conversion_result) + " " + document.getElementById("targetInput").value.  toUpperCase());
   });
 }
 
