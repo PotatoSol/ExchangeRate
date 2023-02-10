@@ -26,7 +26,6 @@ function handleSubmission(){
   });
 }
 
-
 window.addEventListener("load", function(){
   document.getElementById("userInput").addEventListener("submit", function(event){
     event.preventDefault();
