@@ -9,12 +9,11 @@
 import {Currency} from "./js/currency.js";
 
 function handleSubmission(){
-  let userInput = new Currency(
+  Currency.calculateConversion(
     document.getElementById("amountInput").value,
     document.getElementById("nativeInput").value,
     document.getElementById("targetInput").value
-  );
-  userInput.calculateConversion().then(function(response) {
+  ).then(function(response){
     console.log(response);
   });
 }

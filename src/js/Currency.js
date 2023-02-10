@@ -1,12 +1,9 @@
 //currency object
 export class Currency{
-  constructor(amount, native, target){
-    this.amount = amount;
-    this.native = native;
-    this.target = target;
+  constructor(){
   }
 
-  calculateConversion(){
+  calculateConversion(amount, native, target){
     /*
     still not sure why this doesn't work/how to get it to work
     fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${this.native}/eur/${this.amount}`)
