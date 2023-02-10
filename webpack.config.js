@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -14,15 +15,16 @@ module.exports = {
   },                           
 	devtool: 'eval-source-map',
   plugins: [
-		new ESLintPlugin(),
+    new ESLintPlugin(),
     new CleanWebpackPlugin({
-			verbose: true
+      verbose: true
 		}),
 		new HtmlWebpackPlugin({
-      title: 'Shape Tracker',
-      template: './src/index.html',
+      title: 'Currency Exchange',
+      template: './index.html',
       inject: 'body'
-    })
+    }),
+    new Dotenv()
   ],
   module: {
     rules: [

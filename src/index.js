@@ -6,8 +6,9 @@
 //error check - on page
 //  * for invalid currency
 //  * for non-200 api response
+import {Currency} from "./js/currency.js"
 
-handleSubmission(){
+function handleSubmission(){
   let userInput = new Currency(
     document.getElementById("amountInput").value,
     document.getElementById("nativeInput").value,
