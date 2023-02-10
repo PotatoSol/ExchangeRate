@@ -14,6 +14,7 @@ function handleSubmission(){
     document.getElementById("nativeInput").value,
     document.getElementById("targetInput").value
   );
+  userInput.calculateConversion();
 }
 
 
