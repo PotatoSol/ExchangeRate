@@ -3,7 +3,7 @@ export class Currency{
   constructor(){
   }
 
-  calculateConversion(amount, native, target){
+  static calculateConversion(amount, native, target){
     /*
     still not sure why this doesn't work/how to get it to work
     fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${this.native}/eur/${this.amount}`)
@@ -18,9 +18,6 @@ export class Currency{
         }
       });
     */
-    let native = this.native;
-    let amount = this.amount;
-    let target = this.target;
     let promise = new Promise(function(resolve, reject){
       let request = new XMLHttpRequest();
       const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${native}/${target}/${amount}`;

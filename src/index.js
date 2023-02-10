@@ -14,7 +14,8 @@ function handleSubmission(){
     document.getElementById("nativeInput").value,
     document.getElementById("targetInput").value
   ).then(function(response){
-    console.log(response);
+    //console.log(response[0].conversion_result);
+    document.getElementById("output").innerText = response[0].conversion_result;
   });
 }
 
