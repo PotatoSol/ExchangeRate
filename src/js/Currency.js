@@ -23,22 +23,23 @@ export class Currency{
     */
     let native = this.native;
     let amount = this.amount;
+    let target = this.target;
     let promise = new Promise(function(resolve, reject){
       let request = new XMLHttpRequest();
-      const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${native}/eur/${amount}`;
+      const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${native}/${target}/${amount}`;
       request.addEventListener("loadend", function() {
         const response = JSON.parse(this.responseText);
         if(this.status === 200){
           resolve([response, this.amount]);
         } else { 
+          console.log('hey');
           reject([this, response, this.amount]);
         }
       });
       request.open("GET", url, true);
       request.send();
     });
-    let a = promise;
-    console.log(a);
+    return promise;
   }
 }
 
